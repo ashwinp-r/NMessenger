@@ -65,9 +65,11 @@ open class TextContentNode: ContentNode,ASTextNodeDelegate {
         didSet {
             if isIncomingMessage
             {
+				self.view.backgroundColor = UIColor.clear
                 self.backgroundBubble?.bubbleColor = self.bubbleConfiguration.getIncomingColor()
                 self.updateAttributedText()
             } else {
+				self.view.backgroundColor = UIColor.clear
                 self.backgroundBubble?.bubbleColor = self.bubbleConfiguration.getOutgoingColor()
                 self.updateAttributedText()
             }
@@ -116,6 +118,7 @@ open class TextContentNode: ContentNode,ASTextNodeDelegate {
     {
         self.backgroundBubble = self.bubbleConfiguration.getBubble()
         textMessageNode.delegate = self
+		textMessageNode.backgroundColor = UIColor.clear
         textMessageNode.isUserInteractionEnabled = true
         textMessageNode.linkAttributeNames = ["LinkAttribute","PhoneNumberAttribute"]
         let fontAndSizeAndTextColor = [ NSAttributedStringKey.font: self.isIncomingMessage ? incomingTextFont : outgoingTextFont, NSAttributedStringKey.foregroundColor: self.isIncomingMessage ? incomingTextColor : outgoingTextColor]
