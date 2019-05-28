@@ -113,7 +113,7 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
         flowLayout.minimumInteritemSpacing = spacingBetweenCells
         flowLayout.minimumLineSpacing = spacingBetweenRows
         self.collectionViewMessageNode = ASCollectionNode(collectionViewLayout: flowLayout)
-        self.collectionViewMessageNode.backgroundColor = UIColor.white
+        self.collectionViewMessageNode.backgroundColor = UIColor.clear
         
         self.collectionViewMessageNode.accessibilityIdentifier = "CollectionViewWithCustomViews"
         
@@ -142,7 +142,7 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
         flowLayout.minimumInteritemSpacing = spacingBetweenCells
         flowLayout.minimumLineSpacing = spacingBetweenRows
         self.collectionViewMessageNode = ASCollectionNode(collectionViewLayout: flowLayout)
-        self.collectionViewMessageNode.backgroundColor = UIColor.white
+        self.collectionViewMessageNode.backgroundColor = UIColor.clear
 
         self.collectionViewMessageNode.accessibilityIdentifier = "CollectionViewWithCustomNodes"
         self.addSubnode(collectionViewMessageNode)

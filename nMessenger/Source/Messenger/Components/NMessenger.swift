@@ -105,6 +105,8 @@ open class NMessenger: UIView {
     fileprivate func setupView() {
         
         self.messengerNode.view.keyboardDismissMode = .onDrag
+		self.messengerNode.backgroundColor = UIColor.clear
+		self.messengerNode.view.backgroundColor = UIColor.clear
         self.addSubview((messengerNode.view))
         
         messengerNode.delegate = self
@@ -125,6 +127,7 @@ open class NMessenger: UIView {
         super.layoutSubviews()
         //update frame
         messengerNode.frame = self.bounds
+		messengerNode.view.backgroundColor = UIColor.clear
         messengerNode.view.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     
