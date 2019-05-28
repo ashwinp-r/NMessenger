@@ -83,6 +83,7 @@ open class CustomContentNode: ContentNode {
             self.customContentMessageNode.view.addSubview(customView)
             self.customContentMessageNode.style.preferredSize = customView.frame.size
             self.customContentMessageNode.backgroundColor = .clear
+            self.customContentMessageNode.setNeedsDisplay()
         }
         self.addSubnode(customContentMessageNode)
     }
@@ -98,6 +99,7 @@ open class CustomContentNode: ContentNode {
         self.customNode?.isUserInteractionEnabled = true
         customContentMessageNode = customNode
         self.customContentMessageNode.backgroundColor = .clear
+        self.customContentMessageNode.setNeedsDisplay()
         self.addSubnode(customContentMessageNode)
     }
     

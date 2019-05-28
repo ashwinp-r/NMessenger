@@ -107,6 +107,8 @@ open class NMessenger: UIView {
         self.messengerNode.view.keyboardDismissMode = .onDrag
 		self.messengerNode.backgroundColor = UIColor.clear
 		self.messengerNode.view.backgroundColor = UIColor.clear
+        self.messengerNode.setNeedsDisplay()
+        self.messengerNode.view.setNeedsDisplay()
         self.addSubview((messengerNode.view))
         
         messengerNode.delegate = self

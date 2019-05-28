@@ -98,6 +98,8 @@ open class MessageNode: GeneralMessengerCell {
     open override var isIncomingMessage:Bool {
         didSet {
             self.contentNode?.isIncomingMessage = isIncomingMessage
+            self.contentNode?.backgroundColor = .clear
+            self.contentNode?.setNeedsDisplay()
         }
     }
     
@@ -128,6 +130,7 @@ open class MessageNode: GeneralMessengerCell {
         
         self.contentNode = content
         self.contentNode?.backgroundColor = .clear
+        self.contentNode?.setNeedsDisplay()
         self.automaticallyManagesSubnodes = true
     }
     

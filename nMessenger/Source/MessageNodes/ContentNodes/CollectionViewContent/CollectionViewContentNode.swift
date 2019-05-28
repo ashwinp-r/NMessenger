@@ -100,6 +100,8 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
                     return tmpView
                 })
                 tmpNode.style.preferredSize = tmpView.frame.size
+                tmpNode.backgroundColor = .clear
+                tmpNode.setNeedsDisplay()
                 self.collectionViewsDataSource?.append(tmpNode)
             }
         }
@@ -115,6 +117,7 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
         flowLayout.minimumLineSpacing = spacingBetweenRows
         self.collectionViewMessageNode = ASCollectionNode(collectionViewLayout: flowLayout)
         self.collectionViewMessageNode.backgroundColor = UIColor.clear
+        self.collectionViewMessageNode.setNeedsDisplay()
         
         self.collectionViewMessageNode.accessibilityIdentifier = "CollectionViewWithCustomViews"
         
@@ -143,8 +146,10 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
         flowLayout.collectionView?.backgroundColor = .clear
         flowLayout.minimumInteritemSpacing = spacingBetweenCells
         flowLayout.minimumLineSpacing = spacingBetweenRows
+        flowLayout.collectionView?.backgroundColor = .clear
         self.collectionViewMessageNode = ASCollectionNode(collectionViewLayout: flowLayout)
         self.collectionViewMessageNode.backgroundColor = UIColor.clear
+        self.collectionViewMessageNode.setNeedsDisplay()
 
         self.collectionViewMessageNode.accessibilityIdentifier = "CollectionViewWithCustomNodes"
         self.addSubnode(collectionViewMessageNode)
@@ -191,6 +196,8 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
                 let nodeLayout = node.layoutThatFits(tmpConstrainedSize)
                 let nodeSize = nodeLayout.size
                 node.style.preferredSize = nodeSize
+                node.backgroundColor = .clear
+                node.setNeedsDisplay()
                 if (isSmaller(cellSize,bigger: nodeSize))
                 {
                     cellSize=nodeSize
@@ -201,7 +208,7 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
         let height = cellSize.height * self.collectionViewNumberOfRows + spacingBetweenRows*(self.collectionViewNumberOfRows-1)
         
         var width = constrainedSize.max.width
-        if collectionViewNumberOfRows>1
+        if collectionViewNumberOfRows > 1
         {
             var numOfItems:CGFloat = 0
             if let viewDataSource = self.collectionViewsDataSource
@@ -221,6 +228,8 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
         }
         
         self.collectionViewMessageNode.style.preferredSize = CGSize(width: width, height: height)
+        self.collectionViewMessageNode.backgroundColor = .clear
+        self.collectionViewMessageNode.setNeedsDisplay()
         let tmpSizeSpec = ASAbsoluteLayoutSpec()
         tmpSizeSpec.sizing = .sizeToFit
         tmpSizeSpec.children = [self.collectionViewMessageNode]
@@ -277,12 +286,15 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
         if let nodeDataSource = self.collectionNodesDataSource
         {
             let node = nodeDataSource[(indexPath as NSIndexPath).row]
+            node.backgroundColor  = .clear
+            node.setNeedsDisplay()
             let tmp = CustomContentCellNode(withCustomNode: node)
             
             cellNode = tmp
             
         }
         cellNode.backgroundColor = .clear
+        cellNode.setNeedsDisplay()
         return cellNode
     }
     
