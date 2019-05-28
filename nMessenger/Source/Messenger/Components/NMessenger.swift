@@ -141,6 +141,8 @@ open class NMessenger: UIView {
     open func addMessage(_ message: GeneralMessengerCell, scrollsToMessage: Bool) {
         message.backgroundColor = .clear
         message.currentTableNode?.backgroundColor = .clear
+        message.setNeedsDisplay()
+        message.currentTableNode?.setNeedsDisplay()
          self.addMessages([message], scrollsToMessage: scrollsToMessage, withAnimation: .none)
     }
     
@@ -154,6 +156,8 @@ open class NMessenger: UIView {
     open func addMessage(_ message: GeneralMessengerCell, scrollsToMessage: Bool, withAnimation animation: UITableViewRowAnimation) {
         message.backgroundColor = .clear
         message.currentTableNode?.backgroundColor = .clear
+        message.setNeedsDisplay()
+        message.currentTableNode?.setNeedsDisplay()
         self.addMessages([message], scrollsToMessage: scrollsToMessage, withAnimation: animation)
     }
     
@@ -168,6 +172,8 @@ open class NMessenger: UIView {
             for message in messages {
                 message.backgroundColor = .clear
                 message.currentTableNode?.backgroundColor = .clear
+                message.currentTableNode?.setNeedsDisplay()
+                message.setNeedsDisplay()
             }
             self.addMessages(messages, atIndex: self.state.itemCount, scrollsToMessage: scrollsToMessage, animation: .none, completion:  nil)
         }
@@ -185,6 +191,8 @@ open class NMessenger: UIView {
             for message in messages {
                 message.backgroundColor = .clear
                 message.currentTableNode?.backgroundColor = .clear
+                message.currentTableNode?.setNeedsDisplay()
+                message.setNeedsDisplay()
             }
             self.addMessages(messages, atIndex: self.state.itemCount, scrollsToMessage: scrollsToMessage, animation: animation, completion:  nil)
         }
@@ -203,6 +211,8 @@ open class NMessenger: UIView {
             for message in messages {
                 message.backgroundColor = .clear
                 message.currentTableNode?.backgroundColor = .clear
+                message.currentTableNode?.setNeedsDisplay()
+                message.setNeedsDisplay()
             }
             self.addMessages(messages, atIndex: self.state.itemCount, scrollsToMessage: scrollsToMessage, animation: animation, completion:  completion)
         }

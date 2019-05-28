@@ -303,6 +303,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
     open func addMessageToMessenger(_ message:GeneralMessengerCell)
     {
         message.currentViewController = self
+        message.backgroundColor = .clear
         if message.isIncomingMessage == false {
             self.messengerView.addMessage(message, scrollsToMessage: true, withAnimation: .right)
         } else {
