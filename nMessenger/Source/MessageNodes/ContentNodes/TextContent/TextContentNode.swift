@@ -118,7 +118,6 @@ open class TextContentNode: ContentNode,ASTextNodeDelegate {
     {
         self.backgroundBubble = self.bubbleConfiguration.getBubble()
         textMessageNode.delegate = self
-		textMessageNode.backgroundColor = UIColor.clear
         textMessageNode.isUserInteractionEnabled = true
         textMessageNode.linkAttributeNames = ["LinkAttribute","PhoneNumberAttribute"]
         let fontAndSizeAndTextColor = [ NSAttributedStringKey.font: self.isIncomingMessage ? incomingTextFont : outgoingTextFont, NSAttributedStringKey.foregroundColor: self.isIncomingMessage ? incomingTextColor : outgoingTextColor]

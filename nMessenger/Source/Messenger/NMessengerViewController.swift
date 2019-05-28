@@ -270,6 +270,9 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
      */
     open func sendCollectionViewWithNodes(_ nodes: [ASDisplayNode], numberOfRows:CGFloat, isIncomingMessage:Bool) -> GeneralMessengerCell
     {
+        for node in nodes {
+            node.backgroundColor = .clear
+        }
         return self.postCollectionView(nodes, numberOfRows: numberOfRows, isIncomingMessage: isIncomingMessage)
     }
     
@@ -287,6 +290,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
      */
     open func sendCustomNode(_ node: ASDisplayNode, isIncomingMessage:Bool) -> GeneralMessengerCell
     {
+        node.backgroundColor = .clear
         return self.postCustomContent(node, isIncomingMessage: isIncomingMessage)
     }
     
@@ -356,7 +360,9 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
      */
     open func createTextMessage(_ text: String, isIncomingMessage:Bool) -> GeneralMessengerCell {
         let textContent = TextContentNode(textMessageString: text, currentViewController: self, bubbleConfiguration: self.sharedBubbleConfiguration)
+        textContent.backgroundColor = .clear
         let newMessage = MessageNode(content: textContent)
+        newMessage.backgroundColor = .clear
         newMessage.cellPadding = messagePadding
         newMessage.currentViewController = self
         newMessage.isIncomingMessage = isIncomingMessage
@@ -476,6 +482,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
         newMessage.cellPadding = messagePadding
         newMessage.currentViewController = self
         newMessage.isIncomingMessage = isIncomingMessage
+        newMessage.backgroundColor = .clear
         
         return newMessage
     }
@@ -489,6 +496,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
      */
     fileprivate func postCollectionView(_ nodes: [ASDisplayNode], numberOfRows:CGFloat, isIncomingMessage:Bool) -> GeneralMessengerCell {
         let newMessage = self.createCollectionNodeMessage(nodes, numberOfRows: numberOfRows, isIncomingMessage: isIncomingMessage)
+        newMessage.backgroundColor = .clear
         self.addMessageToMessenger(newMessage)
         return newMessage
     }
@@ -505,6 +513,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
         newMessage.cellPadding = messagePadding
         newMessage.currentViewController = self
         newMessage.isIncomingMessage = isIncomingMessage
+        newMessage.backgroundColor = .clear
         
         return newMessage
     }
@@ -518,6 +527,8 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
     fileprivate func postCustomContent(_ view: UIView, isIncomingMessage:Bool) -> GeneralMessengerCell {
         let newMessage = self.createCustomContentViewMessage(view, isIncomingMessage: isIncomingMessage)
         self.addMessageToMessenger(newMessage)
+        newMessage.backgroundColor = .clear
+
         return newMessage
     }
     
@@ -534,6 +545,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
         newMessage.cellPadding = messagePadding
         newMessage.currentViewController = self
         newMessage.isIncomingMessage = isIncomingMessage
+        newMessage.backgroundColor = .clear
         
         return newMessage
     }
@@ -547,6 +559,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
     fileprivate func postCustomContent(_ node: ASDisplayNode, isIncomingMessage:Bool) -> GeneralMessengerCell {
         let newMessage = self.createCustomContentNodeMessage(node, isIncomingMessage: isIncomingMessage)
         self.addMessageToMessenger(newMessage)
+        newMessage.backgroundColor = .clear
         return newMessage
     }
     

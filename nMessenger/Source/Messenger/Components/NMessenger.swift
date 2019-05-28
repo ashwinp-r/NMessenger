@@ -139,6 +139,8 @@ open class NMessenger: UIView {
      message
      */
     open func addMessage(_ message: GeneralMessengerCell, scrollsToMessage: Bool) {
+        message.backgroundColor = .clear
+        message.currentTableNode?.backgroundColor = .clear
          self.addMessages([message], scrollsToMessage: scrollsToMessage, withAnimation: .none)
     }
     
@@ -150,6 +152,8 @@ open class NMessenger: UIView {
      - parameter animation: An animation for newly added cell
      */
     open func addMessage(_ message: GeneralMessengerCell, scrollsToMessage: Bool, withAnimation animation: UITableViewRowAnimation) {
+        message.backgroundColor = .clear
+        message.currentTableNode?.backgroundColor = .clear
         self.addMessages([message], scrollsToMessage: scrollsToMessage, withAnimation: animation)
     }
     
@@ -161,6 +165,10 @@ open class NMessenger: UIView {
      */
     open func addMessages(_ messages: [GeneralMessengerCell], scrollsToMessage: Bool) {
         self.waitForMessageLock {
+            for message in messages {
+                message.backgroundColor = .clear
+                message.currentTableNode?.backgroundColor = .clear
+            }
             self.addMessages(messages, atIndex: self.state.itemCount, scrollsToMessage: scrollsToMessage, animation: .none, completion:  nil)
         }
     }
@@ -174,6 +182,10 @@ open class NMessenger: UIView {
      */
     open func addMessages(_ messages: [GeneralMessengerCell], scrollsToMessage: Bool, withAnimation animation: UITableViewRowAnimation) {
         self.waitForMessageLock {
+            for message in messages {
+                message.backgroundColor = .clear
+                message.currentTableNode?.backgroundColor = .clear
+            }
             self.addMessages(messages, atIndex: self.state.itemCount, scrollsToMessage: scrollsToMessage, animation: animation, completion:  nil)
         }
     }
@@ -188,6 +200,10 @@ open class NMessenger: UIView {
      */
     open func addMessagesWithBlock(_ messages: [GeneralMessengerCell], scrollsToMessage: Bool, withAnimation animation: UITableViewRowAnimation, completion: (()->Void)?) {
         self.waitForMessageLock {
+            for message in messages {
+                message.backgroundColor = .clear
+                message.currentTableNode?.backgroundColor = .clear
+            }
             self.addMessages(messages, atIndex: self.state.itemCount, scrollsToMessage: scrollsToMessage, animation: animation, completion:  completion)
         }
     }
@@ -455,6 +471,7 @@ open class NMessenger: UIView {
                 //set current table
                 for message in messages {
                     message.currentTableNode = self.messengerNode
+                    message.currentTableNode?.backgroundColor = .clear
                 }
                 //render new cells
                 self.renderDiff(oldState, startIndex: self.state.cellBufferStartIndex, animation: animation, completion: {
@@ -661,6 +678,8 @@ extension NMessenger {
      */
     public func addMessageToMessageGroup(_ message: GeneralMessengerCell, messageGroup: MessageGroup, scrollsToLastMessage: Bool, completion: (()->Void)?) {
         messageGroup.addMessageToGroup(message, completion: {
+            message.currentTableNode?.backgroundColor = .clear
+            message.backgroundColor = .clear
                 if scrollsToLastMessage {
                     self.scrollToLastMessage(animated: true)
                 }
@@ -678,6 +697,8 @@ extension NMessenger {
      */
     public func addMessageToMessageGroup(_ message: GeneralMessengerCell, messageGroup: MessageGroup, scrollsToMessage: Bool, toPosition position: UITableViewScrollPosition?, completion: (()->Void)?) {
          messageGroup.addMessageToGroup(message, completion: {
+            message.currentTableNode?.backgroundColor = .clear
+            message.backgroundColor = .clear
             if scrollsToMessage {
                 if let position = position {
                     self.scrollToMessage(messageGroup, atPosition: position, animated: true)
@@ -777,9 +798,13 @@ extension NMessenger: ASTableDelegate, ASTableDataSource {
             if (indexPath as NSIndexPath).row >= self.state.cellBufferStartIndex {
                 return self.state.cellBuffer[(indexPath as NSIndexPath).row - self.state.cellBufferStartIndex]
             }
-            return tableView.nodeForRow(at: indexPath)!
+            let node = tableView.nodeForRow(at: indexPath)!
+            node.backgroundColor = .clear
+            return node
         case NMessengerSection.typingIndicator.rawValue:
-            return self.state.typingIndicators[(indexPath as NSIndexPath).row]
+            let node = self.state.typingIndicators[(indexPath as NSIndexPath).row]
+            node.backgroundColor = .clear
+            return node
         default: //should never come here
             return ASCellNode()
         }

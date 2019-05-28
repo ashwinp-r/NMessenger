@@ -127,6 +127,7 @@ open class MessageNode: GeneralMessengerCell {
         self.avatarButtonNode.isExclusiveTouch = true
         
         self.contentNode = content
+        self.contentNode?.backgroundColor = .clear
         self.automaticallyManagesSubnodes = true
     }
     

@@ -110,6 +110,7 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
             flowLayout.scrollDirection = .horizontal
         }
         flowLayout.itemSize = cellSize
+        flowLayout.collectionView?.backgroundColor = .clear
         flowLayout.minimumInteritemSpacing = spacingBetweenCells
         flowLayout.minimumLineSpacing = spacingBetweenRows
         self.collectionViewMessageNode = ASCollectionNode(collectionViewLayout: flowLayout)
@@ -139,6 +140,7 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
             flowLayout.scrollDirection = .horizontal
         }
         flowLayout.itemSize = cellSize
+        flowLayout.collectionView?.backgroundColor = .clear
         flowLayout.minimumInteritemSpacing = spacingBetweenCells
         flowLayout.minimumLineSpacing = spacingBetweenRows
         self.collectionViewMessageNode = ASCollectionNode(collectionViewLayout: flowLayout)
@@ -280,6 +282,7 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
             cellNode = tmp
             
         }
+        cellNode.backgroundColor = .clear
         return cellNode
     }
     

@@ -69,6 +69,7 @@ open class MessageGroup: GeneralMessengerCell {
         didSet {
             for message in messages {
                 if let message = message as? MessageNode {
+                    message.backgroundColor = .clear
                     message.isIncomingMessage = isIncomingMessage
                 }
             }
@@ -98,7 +99,7 @@ open class MessageGroup: GeneralMessengerCell {
     fileprivate func setupTable() {
         self.messageTable.delegate = self
         self.messageTable.dataSource = self
-        
+
         self.messageTable.view.separatorStyle = .none
         self.messageTable.view.isScrollEnabled = false
         self.messageTable.view.showsVerticalScrollIndicator = false

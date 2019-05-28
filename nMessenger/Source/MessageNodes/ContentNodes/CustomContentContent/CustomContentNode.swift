@@ -82,6 +82,7 @@ open class CustomContentNode: ContentNode {
         DispatchQueue.main.async {
             self.customContentMessageNode.view.addSubview(customView)
             self.customContentMessageNode.style.preferredSize = customView.frame.size
+            self.customContentMessageNode.backgroundColor = .clear
         }
         self.addSubnode(customContentMessageNode)
     }
@@ -96,6 +97,7 @@ open class CustomContentNode: ContentNode {
         self.customNode = customNode
         self.customNode?.isUserInteractionEnabled = true
         customContentMessageNode = customNode
+        self.customContentMessageNode.backgroundColor = .clear
         self.addSubnode(customContentMessageNode)
     }
     
