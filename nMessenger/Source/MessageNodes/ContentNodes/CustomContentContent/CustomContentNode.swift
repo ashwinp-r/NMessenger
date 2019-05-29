@@ -35,11 +35,11 @@ open class CustomContentNode: ContentNode {
     
     // MARK: Private Variables
     /** ASCollectionNode as the content of the cell*/
-    open fileprivate(set) var customContentMessageNode:ASDisplayNode = ASDisplayNode()
+    open fileprivate(set) var customContentMessageNode: ASDisplayNode = ASDisplayNode()
     /** UIView as the posiible view of the cell*/
-    fileprivate var customView:UIView?
+    fileprivate var customView: UIView?
     /** ASDisplayNode as the posiible view of the cell*/
-    fileprivate var customNode:ASDisplayNode?
+    fileprivate var customNode: ASDisplayNode?
    
     
     // MARK: Initialisers
@@ -51,6 +51,8 @@ open class CustomContentNode: ContentNode {
      */
     public init(withCustomView customView: UIView, bubbleConfiguration: BubbleConfigurationProtocol? = nil) {
         super.init(bubbleConfiguration: bubbleConfiguration)
+        customView.backgroundColor = .clear
+        customNode?.backgroundColor = .clear
         self.setupCustomView(customView)
     }
     
@@ -61,6 +63,7 @@ open class CustomContentNode: ContentNode {
      */
     public init(withCustomNode customNode: ASDisplayNode, bubbleConfiguration: BubbleConfigurationProtocol? = nil) {
         super.init(bubbleConfiguration: bubbleConfiguration)
+        customNode.backgroundColor = .clear
         self.setupCustomNode(customNode)
     }
     
@@ -80,6 +83,7 @@ open class CustomContentNode: ContentNode {
     {
         self.customView = customView
         DispatchQueue.main.async {
+            self.customView?.backgroundColor = .clear
             self.customContentMessageNode.view.addSubview(customView)
             self.customContentMessageNode.style.preferredSize = customView.frame.size
             self.customContentMessageNode.backgroundColor = .clear
@@ -96,8 +100,10 @@ open class CustomContentNode: ContentNode {
     {
         self.isUserInteractionEnabled = true
         self.customNode = customNode
+        self.customNode?.backgroundColor = .clear
         self.customNode?.isUserInteractionEnabled = true
         customContentMessageNode = customNode
+        
         self.customContentMessageNode.backgroundColor = .clear
         self.customContentMessageNode.setNeedsDisplay()
         self.addSubnode(customContentMessageNode)

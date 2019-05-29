@@ -34,6 +34,7 @@ open class ContentNode: ASDisplayNode {
      */
     open var isIncomingMessage = true {
         didSet {
+            backgroundColor = .clear
             self.backgroundBubble?.bubbleColor = isIncomingMessage ? bubbleConfiguration.getIncomingColor() : bubbleConfiguration.getOutgoingColor()
             
             self.setNeedsLayout()
@@ -71,7 +72,8 @@ open class ContentNode: ASDisplayNode {
         self.backgroundBubble = self.bubbleConfiguration.getBubble()
         
         self.backgroundBubble?.bubbleColor = isIncomingMessage ? bubbleConfiguration.getIncomingColor() : bubbleConfiguration.getOutgoingColor()
-        
+        backgroundColor = .clear
+
         self.setNeedsLayout()
     }
     
@@ -111,6 +113,7 @@ open class ContentNode: ASDisplayNode {
         guard let instance = parameters as? ContentNode else {
             return
         }
+        instance.backgroundColor = .clear
         instance.isOpaque = false
         if !isRasterizing {
             instance.calculateLayerPropertiesThatFit(bounds)
@@ -144,7 +147,7 @@ open class ContentNode: ASDisplayNode {
      */
     open class func layoutLayers(with backgroundBubble: Bubble, isIncomingMessage: Bool) {
         backgroundBubble.createLayer()
-        
+
         //TODO: this is slightly hacky, will need to rethink
         if isIncomingMessage {
             CATransaction.begin()

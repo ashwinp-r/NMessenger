@@ -99,6 +99,7 @@ open class MessageGroup: GeneralMessengerCell {
     fileprivate func setupTable() {
         self.messageTable.delegate = self
         self.messageTable.dataSource = self
+        self.messageTable.backgroundColor = .clear
 
         self.messageTable.view.separatorStyle = .none
         self.messageTable.view.isScrollEnabled = false

@@ -36,6 +36,7 @@ open class GeneralMessengerCell: ASCellNode {
     public override init() {
         super.init()
         selectionStyle = .none
+        backgroundColor = .clear
         cellPadding = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
     }
     /**
@@ -52,6 +53,7 @@ open class GeneralMessengerCell: ASCellNode {
         }
         
         //set current view controller
+        backgroundColor = .clear
         self.currentViewController = currentViewController
     }
     

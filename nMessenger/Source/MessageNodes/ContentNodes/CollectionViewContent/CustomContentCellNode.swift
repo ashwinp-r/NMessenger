@@ -32,6 +32,7 @@ open class CustomContentCellNode: ASCellNode {
     {
         super.init()
         self.customContent = node
+        node.backgroundColor = .clear
         self.customContent.backgroundColor = .clear
         self.addSubnode(self.customContent)
     }

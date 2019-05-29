@@ -59,6 +59,7 @@ open class NetworkImageContentNode: ContentNode,ASNetworkImageNodeDelegate {
     fileprivate func setupNetworkImageNode(_ imageURL: String)
     {
         networkImageMessageNode.url = URL(string: imageURL)
+        networkImageMessageNode.backgroundColor = .clear
         networkImageMessageNode.shouldCacheImage = true
         networkImageMessageNode.delegate = self
         self.addSubnode(networkImageMessageNode)

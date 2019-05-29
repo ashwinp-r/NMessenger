@@ -97,6 +97,7 @@ open class CollectionViewContentNode: ContentNode,ASCollectionDelegate,ASCollect
             for tmpView in tmpArray
             {
                 let tmpNode = ASDisplayNode(viewBlock: { () -> UIView in
+                    tmpView.backgroundColor = .clear
                     return tmpView
                 })
                 tmpNode.style.preferredSize = tmpView.frame.size

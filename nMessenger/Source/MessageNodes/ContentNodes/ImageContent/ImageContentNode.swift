@@ -60,6 +60,7 @@ open class ImageContentNode: ContentNode {
     fileprivate func setupImageNode(_ image: UIImage)
     {
         imageMessageNode.image = image
+        imageMessageNode.backgroundColor = .clear
         imageMessageNode.clipsToBounds = true
         imageMessageNode.contentMode = UIViewContentMode.scaleAspectFill
         self.imageMessageNode.accessibilityIdentifier = "imageNode"

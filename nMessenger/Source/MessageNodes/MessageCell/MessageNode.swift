@@ -23,6 +23,7 @@ open class MessageNode: GeneralMessengerCell {
     /** ASDisplayNode as the content of the cell*/
     open var contentNode: ContentNode? {
         didSet {
+            backgroundColor = .clear
             self.setNeedsLayout()
         }
     }
@@ -38,6 +39,7 @@ open class MessageNode: GeneralMessengerCell {
     /** ASDisplayNode as the header of the cell*/
     open var headerNode: ASDisplayNode? {
         didSet {
+            backgroundColor = .clear
             self.setNeedsLayout()
         }
     }
@@ -45,6 +47,7 @@ open class MessageNode: GeneralMessengerCell {
     /** ASDisplayNode as the footer of the cell*/
     open var footerNode: ASDisplayNode? {
         didSet {
+            backgroundColor = .clear
             self.setNeedsLayout()
         }
     }
@@ -114,6 +117,7 @@ open class MessageNode: GeneralMessengerCell {
      */
     public init(content: ContentNode) {
         super.init()
+        content.backgroundColor = .clear
         self.setupMessageNode(withContent: content)
     }
     

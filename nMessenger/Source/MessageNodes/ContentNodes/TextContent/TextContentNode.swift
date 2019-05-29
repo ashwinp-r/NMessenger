@@ -44,7 +44,7 @@ open class TextContentNode: ContentNode,ASTextNodeDelegate {
         }
     }
     /** UIColor for outgoinf text messages*/
-    open var outgoingTextColor = UIColor.n1WhiteColor() {
+    open var outgoingTextColor = UIColor.white {
         didSet {
             self.updateAttributedText()
         }
@@ -117,6 +117,7 @@ open class TextContentNode: ContentNode,ASTextNodeDelegate {
     fileprivate func setupTextNode(_ textMessageString: String)
     {
         self.backgroundBubble = self.bubbleConfiguration.getBubble()
+        textMessageNode.backgroundColor = .clear
         textMessageNode.delegate = self
         textMessageNode.isUserInteractionEnabled = true
         textMessageNode.linkAttributeNames = ["LinkAttribute","PhoneNumberAttribute"]
