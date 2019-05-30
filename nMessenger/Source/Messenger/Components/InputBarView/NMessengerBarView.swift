@@ -45,7 +45,7 @@ open class NMessengerBarView: InputBarView, UITextViewDelegate, CameraViewDelega
     
     //MARK: Private Parameters
     //CGFloat as defualt height for input view
-    fileprivate let textInputViewHeightConst:CGFloat = 30
+    fileprivate let textInputViewHeightConst: CGFloat = 30
     
     // MARK: Initialisers
     /**
