@@ -46,31 +46,8 @@
                                 <constraint firstItem="6ZI-Ed-TdT" firstAttribute="leading" secondItem="cHJ-9A-RDO" secondAttribute="leading" id="nf0-mO-xBt"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pa9-7P-RgB">
-                            <rect key="frame" x="5" y="5" width="37" height="33"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZY8-eq-qAl">
-                                    <rect key="frame" x="8" y="6" width="21" height="22"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="22" id="5jc-Cu-7Kh"/>
-                                        <constraint firstAttribute="width" constant="21" id="8IW-Fa-9za"/>
-                                    </constraints>
-                                    <connections>
-                                        <action selector="plusClicked:" destination="-1" eventType="touchUpInside" id="xV0-C3-1Oj"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="ZY8-eq-qAl" secondAttribute="trailing" constant="8" id="0vc-FL-Ycc"/>
-                                <constraint firstAttribute="height" constant="33" id="JN8-0Y-nBy"/>
-                                <constraint firstItem="ZY8-eq-qAl" firstAttribute="leading" secondItem="Pa9-7P-RgB" secondAttribute="leading" constant="8" id="nZd-vt-1hR"/>
-                                <constraint firstAttribute="width" constant="37" id="tUT-U0-5Em"/>
-                                <constraint firstAttribute="bottom" secondItem="ZY8-eq-qAl" secondAttribute="bottom" constant="5" id="zxL-q8-5zZ"/>
-                            </constraints>
-                        </view>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Say something..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YfN-Lj-gpH">
-                            <rect key="frame" x="42" y="5" width="497" height="33"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Say something..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YfN-Lj-gpH">
+                            <rect key="frame" x="8" y="5" width="531" height="33"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="vxI-oq-CGe"/>
@@ -82,15 +59,10 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Pa9-7P-RgB" firstAttribute="leading" secondItem="Sm0-IA-kLJ" secondAttribute="leading" constant="5" id="7jj-nl-Iq5"/>
                         <constraint firstItem="cHJ-9A-RDO" firstAttribute="top" secondItem="Sm0-IA-kLJ" secondAttribute="top" constant="5" id="F2T-pe-fZn"/>
                         <constraint firstItem="YfN-Lj-gpH" firstAttribute="top" secondItem="Sm0-IA-kLJ" secondAttribute="top" constant="5" id="K0L-2a-LDW"/>
-                        <constraint firstItem="Pa9-7P-RgB" firstAttribute="top" secondItem="Sm0-IA-kLJ" secondAttribute="top" constant="5" id="LcR-QE-0cT"/>
-                        <constraint firstItem="YfN-Lj-gpH" firstAttribute="leading" secondItem="Pa9-7P-RgB" secondAttribute="trailing" id="M62-Qn-HO5"/>
-                        <constraint firstItem="YfN-Lj-gpH" firstAttribute="leading" secondItem="Pa9-7P-RgB" secondAttribute="trailing" id="R7x-t3-E4E"/>
                         <constraint firstItem="cHJ-9A-RDO" firstAttribute="leading" secondItem="YfN-Lj-gpH" secondAttribute="trailing" id="Rtx-IN-hfz"/>
                         <constraint firstItem="cHJ-9A-RDO" firstAttribute="leading" secondItem="YfN-Lj-gpH" secondAttribute="trailing" id="TYR-aF-Ad0"/>
-                        <constraint firstAttribute="bottom" secondItem="Pa9-7P-RgB" secondAttribute="bottom" constant="5" id="XJn-U3-o8q"/>
                         <constraint firstAttribute="bottom" secondItem="cHJ-9A-RDO" secondAttribute="bottom" constant="5" id="bdi-Eg-0eu"/>
                         <constraint firstAttribute="trailing" secondItem="cHJ-9A-RDO" secondAttribute="trailing" constant="5" id="pCv-ed-IZS"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="yKk-PO-qMv"/>
@@ -107,7 +79,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="349" y="105.5"/>
+            <point key="canvasLocation" x="347.82608695652175" y="105.46875"/>
         </view>
     </objects>
 </document>
