@@ -46,8 +46,8 @@
                                 <constraint firstItem="6ZI-Ed-TdT" firstAttribute="leading" secondItem="cHJ-9A-RDO" secondAttribute="leading" id="nf0-mO-xBt"/>
                             </constraints>
                         </view>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Say something..." translatesAutoresizingMaskIntoConstraints="NO" id="YfN-Lj-gpH">
-                            <rect key="frame" x="8" y="5" width="531" height="33"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Say something..." translatesAutoresizingMaskIntoConstraints="NO" id="YfN-Lj-gpH">
+                            <rect key="frame" x="5" y="5" width="534" height="33"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="vxI-oq-CGe"/>
@@ -55,6 +55,7 @@
                             <color key="textColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                         </textView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,6 +66,7 @@
                         <constraint firstItem="cHJ-9A-RDO" firstAttribute="leading" secondItem="YfN-Lj-gpH" secondAttribute="trailing" id="TYR-aF-Ad0"/>
                         <constraint firstAttribute="bottom" secondItem="cHJ-9A-RDO" secondAttribute="bottom" constant="5" id="bdi-Eg-0eu"/>
                         <constraint firstAttribute="trailing" secondItem="cHJ-9A-RDO" secondAttribute="trailing" constant="5" id="pCv-ed-IZS"/>
+                        <constraint firstItem="YfN-Lj-gpH" firstAttribute="leading" secondItem="Sm0-IA-kLJ" secondAttribute="leading" constant="5" id="xP9-ZP-Wh9"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="yKk-PO-qMv"/>
                         <constraint firstAttribute="bottom" secondItem="YfN-Lj-gpH" secondAttribute="bottom" constant="5" id="ybi-zW-tOW"/>
                     </constraints>
