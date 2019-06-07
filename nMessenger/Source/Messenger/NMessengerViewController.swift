@@ -162,7 +162,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
     {
         inputBarView.translatesAutoresizingMaskIntoConstraints = false
         self.inputBarBottomSpacing = NSLayoutConstraint(item: self.inputBarView, attribute: .bottom, relatedBy: .equal, toItem: self.bottomLayoutGuide, attribute: .top, multiplier: 1, constant: 0)
-        self.view.addConstraint(self.inputBarBottomSpacing)
+//        self.view.addConstraint(self.inputBarBottomSpacing)
         self.view.addConstraint(NSLayoutConstraint(item: self.inputBarView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0))
         self.view.addConstraint(NSLayoutConstraint(item: self.inputBarView, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0))
         self.view.addConstraint(NSLayoutConstraint(item: inputBarView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.inputBarView.frame.size.height))
