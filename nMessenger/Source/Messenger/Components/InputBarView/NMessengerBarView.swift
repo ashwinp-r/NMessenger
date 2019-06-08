@@ -91,8 +91,10 @@ open class NMessengerBarView: InputBarView, UITextViewDelegate, CameraViewDelega
         _ = Bundle(for: NMessengerViewController.self).loadNibNamed("NMessengerBarView", owner: self, options: nil)?[0] as! UIView
         self.addSubview(inputBarView)
         inputBarView.frame = self.bounds
-        inputBarView.layer.borderColor = UIColor.white.cgColor
+        // inputBarView.layer.borderColor = UIColor.white.cgColor
         textInputView.delegate = self
+        textInputView.layer.borderColor = UIColor.white.cgColor
+        self.sendButton.layer.borderColor = UIColor.white.cgColor
         self.sendButton.isEnabled = false
         cameraVC.cameraDelegate = self
 
