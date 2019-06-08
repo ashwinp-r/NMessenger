@@ -94,6 +94,9 @@ open class NMessengerBarView: InputBarView, UITextViewDelegate, CameraViewDelega
         // inputBarView.layer.borderColor = UIColor.white.cgColor
         textInputView.delegate = self
         textInputView.layer.borderColor = UIColor.white.cgColor
+        textInputView.layer.borderWidth = 1.0
+        textInputView.layer.cornerRadius = 5.0
+        self.sendButton.layer.borderWidth = 1.0
         self.sendButton.layer.borderColor = UIColor.white.cgColor
         self.sendButton.isEnabled = false
         cameraVC.cameraDelegate = self
