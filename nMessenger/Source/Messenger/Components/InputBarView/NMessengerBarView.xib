@@ -47,7 +47,7 @@
                                 <constraint firstItem="6ZI-Ed-TdT" firstAttribute="leading" secondItem="cHJ-9A-RDO" secondAttribute="leading" id="nf0-mO-xBt"/>
                             </constraints>
                         </view>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Say something..." translatesAutoresizingMaskIntoConstraints="NO" id="YfN-Lj-gpH">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" text="Say something..." translatesAutoresizingMaskIntoConstraints="NO" id="YfN-Lj-gpH">
                             <rect key="frame" x="5" y="5" width="534" height="33"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
