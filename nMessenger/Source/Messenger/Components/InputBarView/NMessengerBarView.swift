@@ -91,11 +91,16 @@ open class NMessengerBarView: InputBarView, UITextViewDelegate, CameraViewDelega
         _ = Bundle(for: NMessengerViewController.self).loadNibNamed("NMessengerBarView", owner: self, options: nil)?[0] as! UIView
         self.addSubview(inputBarView)
         inputBarView.frame = self.bounds
+        
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        
         // inputBarView.layer.borderColor = UIColor.white.cgColor
         textInputView.delegate = self
         textInputView.layer.borderColor = UIColor.lightGray.cgColor
         textInputView.layer.borderWidth = 1.0
         textInputView.layer.cornerRadius = 10.0
+        textInputView.addSubview(blurView)
+        textInputView.sendSubview(toBack: blurView)
         //self.sendButton.layer.borderWidth = 1.0
         //self.sendButton.layer.borderColor = UIColor.white.cgColor
         self.sendButton.isEnabled = false
