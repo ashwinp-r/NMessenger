@@ -149,15 +149,15 @@ open class NMessengerBarView: InputBarView, UITextViewDelegate, CameraViewDelega
             }) 
             return true
         }
-//        else if (text == "\n") && textView.text != ""{
-//            if textView == self.textInputView {
-//                textInputViewHeight.constant = textInputViewHeightConst
-//                textInputAreaViewHeight.constant = textInputViewHeightConst+10
-//                _ = self.controller.sendText(self.textInputView.text,isIncomingMessage: false)
-//                self.textInputView.text = ""
-//                return false
-//            }
-//        }
+        else if (text == "\n") && textView.text != ""{
+            if textView == self.textInputView {
+                textInputViewHeight.constant = textInputViewHeightConst
+                textInputAreaViewHeight.constant = textInputViewHeightConst+10
+                _ = self.controller.sendText(self.textInputView.text,isIncomingMessage: false)
+                self.textInputView.text = ""
+                return false
+            }
+        }
         else if (text != "\n")
         {
             
