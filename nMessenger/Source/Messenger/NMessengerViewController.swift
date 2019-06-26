@@ -324,7 +324,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
      Creates an incoming typing indicator
      - parameter avatar: an avatar to add to the typing indicator message
      */
-    open func createTypingIndicator(_ avatar: ASDisplayNode?) -> GeneralMessengerCell
+    open func createTypingIndicator(_ avatar: ASTextNode?) -> GeneralMessengerCell
     {
         let typing = TypingIndicatorContent(bubbleConfiguration: self.sharedBubbleConfiguration)
         let newMessage = MessageNode(content: typing)
@@ -337,7 +337,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
      Adds an incoming typing indicator to the messenger
      - parameter avatar: an avatar to add to the typing indicator message
      */
-    open func showTypingIndicator(_ avatar: ASDisplayNode?) -> GeneralMessengerCell
+    open func showTypingIndicator(_ avatar: ASTextNode?) -> GeneralMessengerCell
     {
         let newMessage = self.createTypingIndicator(avatar)
         messengerView.addTypingIndicator(newMessage, scrollsToLast: false, animated: true, completion: nil)
