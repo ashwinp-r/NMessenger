@@ -29,7 +29,7 @@ open class MessageNode: GeneralMessengerCell {
     }
     
     /** ASDisplayNode as the avatar of the cell*/
-    open var avatarNode: ASDisplayNode? {
+    open var avatarNode: ASTextNode? {
         didSet {
             self.setNeedsLayout()
         }
