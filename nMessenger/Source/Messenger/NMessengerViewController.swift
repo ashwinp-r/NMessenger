@@ -134,7 +134,7 @@ open class NMessengerViewController: UIViewController, UITextViewDelegate, NMess
      Creates NMessenger view and adds it to the view
      */
     fileprivate func loadMessengerView() {
-        self.messengerView = NMessenger(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 63))
+        self.messengerView = NMessenger(frame: CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: self.view.frame.size.height - 63))
         messengerView.delegate = self
         self.view.addSubview(self.messengerView)
     }
